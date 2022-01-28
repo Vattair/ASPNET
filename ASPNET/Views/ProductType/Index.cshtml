@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ASPNET.Models.ProductType>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Lista kategori produktów</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="ProductType" asp-action="Create" class="btn btn-primary">Utwórz nową kategorie</a>
+        </div>
+    </div>
+    <br />
+
+    @if(Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Kategorie
+                    </th>
+                    <th>
+                        Zmiany
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var obj in Model)
+                {
+                <tr>
+                    <td width="35%">@obj.Name</td>
+                    <td width="30%">
+                        <div class="w-100 btn-group"role="group">
+                            <a asp-controller="ProductType" asp-action="Update" asp-route-Id="@obj.Id" class="btn btn-primary mx-1">Zmień</a>
+                           @* <a asp-controller="ProductType" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger mx-1">Usuń</a>*@
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table> 
+    }
+    else
+    {
+        <p>Nie utworzono żadnych kategori.</p>
+    }
+
+</div>
+

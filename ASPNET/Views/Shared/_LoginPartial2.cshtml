@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ASPNET.Areas.Identity.Data
+
+@inject SignInManager<ASPNETUser> SignInManager
+@inject UserManager<ASPNETUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Dostosuj produkty</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="ProductType" asp-action="Index">Dostosuj kategorie</a>
+    </li>
+}
+</ul>
