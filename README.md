@@ -10,4 +10,5 @@ Niezbędne do uruchomienia jest:
  3. Wykonanie poleceń w konsoli menedżera pakietów
 
     add-migration <nazwa-migracji>
+ 
     update-database
